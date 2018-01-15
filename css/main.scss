@@ -1,0 +1,8 @@
+@import 'mixins';
+
+$main-container-width: 90%;
+
+.main-container {
+    width: $main-container-width;
+    margin: 0 auto;
+}
