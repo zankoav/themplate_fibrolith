@@ -66,13 +66,54 @@ var app =
 /************************************************************************/
 /******/ ([
 /* 0 */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
-function zanko(num1, num2) {
-  return num1 + num2;
+"use strict";
+
+
+var _header = __webpack_require__(1);
+
+(0, _header.header)();
+
+/***/ }),
+/* 1 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.header = header;
+
+function header() {
+  /**
+   *  Drop Down Menu
+   */
+  var dropDownActionName = 'scroll',
+      scrollTopY = 300,
+      dropDownClassName = 'show-header';
+  $(window).on(dropDownActionName, function () {
+    if ($(window).scrollTop() > scrollTopY) {
+      $('#header-drop-down').addClass(dropDownClassName);
+    } else {
+      $('#header-drop-down').removeClass(dropDownClassName);
+    }
+  });
+  /**
+   *  Menu Button
+   */
+
+  var menuButtonId = '#menu-button',
+      menuButtonChildrenTagName = 'i',
+      menuButtonCrossClassName = 'fa-times';
+  $(menuButtonId).click(function () {
+    $(this).children(menuButtonChildrenTagName).toggleClass(menuButtonCrossClassName);
+  });
 }
 
-console.log(zanko(3, 6));
+;
 
 /***/ })
 /******/ ]);
