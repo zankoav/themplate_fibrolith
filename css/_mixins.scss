@@ -35,3 +35,10 @@
     -o-transition-duration: $duration;
     transition-duration: $duration;
 }
+
+@mixin transition-timing-function($function) {
+    -webkit-transition-timing-function: $function;
+    -moz-transition-timing-function: $function;
+    -o-transition-timing-function: $function;
+    transition-timing-function: $function;
+}
