@@ -1,0 +1,31 @@
+$breadcrumb-padding: 1rem 0 0.5rem 0;
+$breadcrumb-border-radius: 0;
+$breadcrumb-border-bottom: 1px solid $primary-green-color;
+$breadcrumb-font-size: 80%;
+$breadcrumb-li-first-child-before-content: 'You are hear:';
+$breadcrumb-li-first-child-before-padding-right: .5rem;
+$breadcrumb-item-before-content: '>';
+
+.breadcrumb {
+    padding: $breadcrumb-padding;
+    font-size: $breadcrumb-font-size;
+    border-radius: $breadcrumb-border-radius;
+    border-bottom: $breadcrumb-border-bottom;
+
+    li:first-child::before {
+        content: $breadcrumb-li-first-child-before-content;
+        color: $primary-gray-color;
+        padding-right: $breadcrumb-li-first-child-before-padding-right;
+    }
+
+    .breadcrumb-item {
+        & + .breadcrumb-item::before {
+            content: $breadcrumb-item-before-content;
+        }
+        a {
+            color: $primary-green-color;
+        }
+    }
+
+}
+

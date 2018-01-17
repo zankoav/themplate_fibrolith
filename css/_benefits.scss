@@ -1,0 +1,38 @@
+$benefits-icons-width: 89px;
+$benefits-icons-padding-bottom: 2rem;
+$benefits-card-padding-bottom: 2.5rem;
+$benefits-card-titles-color: white;
+$benefits-card-after-margin-top: 1rem;
+$benefits-card-after-content: '';
+$benefits-card-after-border-bottom: 1px solid $primary-green-color;
+$benefits-card-after-transition-duration: 1s;
+
+#benefits {
+    background-color: $primary-green-color;
+    .row {
+        div {
+            text-align: center;
+            padding-bottom: $benefits-card-padding-bottom;
+            color: $benefits-card-titles-color;
+            text-transform: uppercase;
+
+            &::after {
+                content: $benefits-card-after-content;
+                display: block;
+                margin-top: $benefits-card-after-margin-top;
+                border-bottom: $benefits-card-after-border-bottom;
+                @include transition-property(border-color);
+                @include transition-duration($benefits-card-after-transition-duration);
+            }
+
+            &:hover::after {
+                border-color: $benefits-card-titles-color;
+            }
+
+            img {
+                padding-bottom: $benefits-icons-padding-bottom;
+                width: $benefits-icons-width;
+            }
+        }
+    }
+}
