@@ -1,0 +1,58 @@
+$products-card-margin-bottom: 2.5rem;
+$products-card-border-radius: 0;
+$products-card-a-border: 1px solid $primary-green-color;
+$products-card-a-padding: 1rem;
+$products-card-a-hover-img-transform-scale: 1.2;
+$products-card-body-padding-left: 0;
+$products-card-body-padding-right: 0;
+$products-card-body-btn-color: white;
+$products-card-body-btn-transition-duration: 200ms;
+$products-card-body-btn-hover-opacity: 0.7;
+
+#products {
+    .card {
+        border: none;
+        margin-bottom: $products-card-margin-bottom;
+        @include border-radius($products-card-border-radius);
+
+        .card-title {
+            font-family: $primary-title-font-family;
+            color: $primary-green-color;
+            text-transform: uppercase;
+        }
+
+        & > a {
+            border: $products-card-a-border;
+            padding: $products-card-a-padding;
+            overflow: hidden;
+
+            &:hover img {
+                transform: scale($products-card-a-hover-img-transform-scale);
+            }
+        }
+
+        .card-body {
+            padding-left: $products-card-body-padding-left;
+            padding-right: $products-card-body-padding-right;
+
+            .btn {
+                @include border-radius($products-card-border-radius);
+                color: $products-card-body-btn-color;
+                background-color: $primary-green-color;
+                @include transition-property(opacity);
+                @include transition-duration($products-card-body-btn-transition-duration);
+
+                &:hover {
+                    opacity: $products-card-body-btn-hover-opacity;
+                }
+            }
+        }
+
+        img {
+            @include border-radius($products-card-border-radius);
+            @include transition-property(all);
+            @include transition-duration($products-card-body-btn-transition-duration);
+            @include transition-timing-function(ease-out);
+        }
+    }
+}

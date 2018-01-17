@@ -55,6 +55,8 @@ $slider-min-height: 330px;
 $slider-background-image-url: '../images/bg_oben.jpg';
 $slider-box-shadow: inset 0px -4px 36px -13px rgba(0, 0, 0, 0.5);
 $slider-background-size: cover;
+$slider-card-margin-bottom: 0;
+$slider-card-iframe-min-height: 300px;
 
 header {
 
@@ -167,6 +169,23 @@ header {
         background: url($slider-background-image-url) no-repeat center top;;
         @include box-shadow($slider-box-shadow);
         @include background-size($slider-background-size);
+
+        .card {
+            border: none;
+            @include border-radius(0);
+
+            h2 {
+                font-family: $primary-title-font-family;
+                color: $primary-green-color;
+                text-transform: uppercase;
+                padding-bottom: 2rem;
+            }
+
+            p {
+                text-align: justify;
+            }
+        }
+
     }
 
     .header-lang-wrapper {
@@ -192,6 +211,20 @@ header {
         }
         #header-device, .sub-header-devise {
             display: block;
+        }
+
+        #slider {
+            .main-container {
+                .card-group {
+                    flex-direction: column;
+                    & > .card {
+                        margin-bottom: $slider-card-margin-bottom;
+                        iframe {
+                            min-height: $slider-card-iframe-min-height;
+                        }
+                    }
+                }
+            }
         }
     }
 }
