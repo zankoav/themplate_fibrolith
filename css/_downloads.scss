@@ -1,0 +1,61 @@
+$title-color: $primary-green-color;
+$title-font-size: $font-width-subtitle;
+
+$subtitle-font-size: $font-width-subtitle;
+$subtitle-color: $primary-gray-color;
+$subtitle-margin: 1.5rem 0;
+$subtitle-after-padding-bottom: 1.5rem;
+$subtitle-after-content: '';
+$subtitle-after-border-bottom: 1px dotted $primary-green-color;
+
+$img-width: $width-100;
+
+$button-color: $primary-white-color;
+$button-background-color: $primary-green-color;
+$button-margin: 0.5rem;
+$button-width: $width-100;
+$button-border-radius: 0;
+$button-transition-duration: 300ms;
+$button-hover-opacity: 0.7;
+$button-hover-box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.5);
+
+#downloads {
+    h3 {
+        color: $title-color;
+        font-weight: $title-font-size;
+        text-transform: uppercase;
+    }
+
+    h4 {
+        font-weight: $subtitle-font-size;
+        color: $subtitle-color;
+        margin: $subtitle-margin;
+
+        &::after {
+            display: block;
+            content: $subtitle-after-content;
+            border-bottom: $subtitle-after-border-bottom;
+            padding-top: $subtitle-after-padding-bottom;
+        }
+    }
+
+    img {
+        width: $img-width;
+    }
+
+    .btn {
+        display: block;
+        width: $button-width;
+        margin-top: $button-margin;
+        background-color: $button-background-color;
+        color: $button-color;
+        @include border-radius($button-border-radius);
+        @include transition-property(all);
+        @include transition-duration($button-transition-duration);
+
+        &:hover {
+            opacity: $button-hover-opacity;
+            @include box-shadow($button-hover-box-shadow);
+        }
+    }
+}
