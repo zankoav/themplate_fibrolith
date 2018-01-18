@@ -1,3 +1,11 @@
+@mixin dotted-line($margin-bottom, $padding-top, $color: $primary-green-color){
+    display: block;
+    content: '';
+    border-bottom: 1px dotted $color;
+    padding-top: $padding-top;
+    margin-bottom: $margin-bottom;
+}
+
 @mixin box-shadow($shadow) {
     -webkit-box-shadow: $shadow;
     -moz-box-shadow: $shadow;
