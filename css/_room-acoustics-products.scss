@@ -1,0 +1,51 @@
+$card-img-box-shadow: 0px 14px 14px -8px rgba(0, 0, 0, 0.5);
+$card-p-font-size: 90%;
+$card-p-line-height: 1.5;
+$card-h4-color: $primary-gray-color;
+$card-h4-margin-top: 0.75rem;
+$card-h4-margin-bottom: 2rem;
+$card-h4-font-weight: $font-width-subtitle;
+
+
+#room-acoustics-products {
+
+    .card {
+        border: none;
+        margin-bottom: $products-card-margin-bottom;
+        @include border-radius($products-card-border-radius);
+
+        .card-body {
+            padding-left: $products-card-body-padding-left;
+            padding-right: $products-card-body-padding-right;
+
+            h4 {
+                color: $card-h4-color;
+                margin-top: $card-h4-margin-top;
+                margin-bottom: $card-h4-margin-bottom;
+                font-weight: $card-h4-font-weight;
+            }
+
+            p {
+                font-size: $card-p-font-size;
+                line-height: $card-p-line-height;
+            }
+
+            .btn {
+                @include border-radius($products-card-border-radius);
+                color: $products-card-body-btn-color;
+                background-color: $primary-green-color;
+                @include transition-property(opacity);
+                @include transition-duration($products-card-body-btn-transition-duration);
+
+                &:hover {
+                    opacity: $products-card-body-btn-hover-opacity;
+                }
+            }
+        }
+
+        img {
+            @include box-shadow($card-img-box-shadow);
+            @include border-radius($products-card-border-radius);
+        }
+    }
+}

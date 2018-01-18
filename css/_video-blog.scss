@@ -36,7 +36,7 @@ $video-blog-card-h2-padding-bottom: 2rem;
     #video-blog {
         .main-container {
             .card-group {
-                flex-direction: column;
+                flex-direction: column-reverse;
                 & > .card {
                     margin-bottom: $video-blog-card-margin-bottom;
                     iframe {

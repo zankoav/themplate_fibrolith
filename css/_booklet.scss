@@ -1,0 +1,47 @@
+$booklet-card-btn-hover-background-color: #afd056;
+
+
+#booklet {
+    background-color: $primary-green-color;
+
+    .card-group {
+
+        .card {
+            border: none;
+            color: $primary-white-color;
+            background-color: transparent;
+            @include border-radius($border-radius-0);
+
+            p {
+                margin: 2rem 0;
+            }
+
+            .btn {
+                border: none;
+                background-color: $primary-white-color;
+                color: $primary-green-color;
+                @include border-radius($border-radius-0);
+                @include transition-property(all);
+                @include transition-duration(300ms);
+
+                &:hover {
+                    color: $primary-white-color;
+                    background-color: $booklet-card-btn-hover-background-color;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 992px) {
+    #booklet {
+        .main-container {
+            .card-group {
+                flex-direction: column-reverse;
+                & > .card {
+                    margin-bottom: 2rem;
+                }
+            }
+        }
+    }
+}

@@ -18,6 +18,10 @@ $breadcrumb-item-before-content: '>';
         padding-right: $breadcrumb-li-first-child-before-padding-right;
     }
 
+    li.active {
+        color: $primary-gray-color;
+    }
+
     .breadcrumb-item {
         & + .breadcrumb-item::before {
             content: $breadcrumb-item-before-content;
