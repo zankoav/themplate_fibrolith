@@ -5,8 +5,6 @@ $header-padding-bottom: 20px;
 $header-top: 0;
 $header-box-shadow: 0px 1px 10px 0px rgba(0, 0, 0, 0.2);
 $header-nav-link-color: #333;
-$header-nav-link-active-color: #fff;
-$header-nav-link-active-background-color: #95c11e;
 $header-nav-item-margin-right: 3px;
 $header-transition-duration: 200ms;
 $header-nav-item-nav-link-padding: 0.5rem;
@@ -35,15 +33,13 @@ $header-lang-img-height: 16px;
 $header-device-z-index: 1000;
 $header-device-margin-right: -0.75rem;
 $header-device-focus-outline: 0;
-$header-device-nav-item-active-nav-link-width: 100%;
 $header-device-nav-item-after-content: '';
 $header-device-nav-item-border-bottom: 1px dashed rgba(255, 255, 255, .5);
-
 $header-device-nav-item-active-nav-link-after-content: '\f053';
-$header-device-nav-item-active-nav-link-after-color: #fff;
 $header-device-nav-item-active-nav-link-after-font-weight: 900;
 $header-device-nav-item-active-nav-link-after-font-family: 'Font Awesome\ 5 Free', serif;
 $header-device-nav-item-active-nav-link-after-line-height: 1;
+$header-device-nav-item-active-nav-link-after-font-size: 1.5rem;
 
 // Sub Header (on devise screens)
 
@@ -56,7 +52,14 @@ $slider-background-image-url: '../images/bg_oben.jpg';
 $slider-box-shadow: inset 0px -4px 36px -13px rgba(0, 0, 0, 0.5);
 $slider-background-size: cover;
 $slider-card-margin-bottom: 0;
+$slider-card-border-radius: 0;
+$slider-card-h2-padding-bottom: 1rem;
+$slider-card-h4-padding-bottom: 1rem;
 $slider-card-iframe-min-height: 300px;
+$slider-card-p-last-child-margin-bottom: 0;
+$slider-card-p-font-size: 90%;
+$slider-card-p-line-geight: 1.6;
+$slider-card-img-width: 100%;
 
 header {
 
@@ -84,6 +87,30 @@ header {
             margin-right: $header-nav-item-margin-right;
             margin-bottom: $header-nav-item-margin-right;
 
+            &.active {
+                .nav-link {
+                    color: $primary-white-color;
+                    background: $primary-green-color;
+                }
+            }
+
+            &:hover .nav-link {
+                color: $primary-white-color;
+                background: $primary-green-color;
+            }
+
+            &:first-child {
+                .nav-link {
+                    color: $primary-green-color;
+                }
+
+                &:hover, &.active {
+                    .nav-link {
+                        color: $primary-white-color;
+                    }
+                }
+            }
+
             .nav-link {
                 padding: $header-nav-item-nav-link-padding;
                 color: $header-nav-link-color;
@@ -91,22 +118,6 @@ header {
                 @include transition-duration($header-transition-duration);
             }
 
-            &:hover .nav-link, .active {
-                color: $header-nav-link-active-color;
-                background: $header-nav-link-active-background-color;
-            }
-
-            &:first-child .nav-link {
-                color: $header-nav-link-active-background-color;
-
-                &:hover {
-                    color: $header-nav-link-active-color;
-                }
-
-                &.active {
-                    color: $header-nav-link-active-color;
-                }
-            }
         }
     }
 
@@ -129,7 +140,7 @@ header {
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
-                width: $header-device-nav-item-active-nav-link-width;
+                width: $width-100;
             }
         }
 
@@ -148,7 +159,8 @@ header {
 
             &.active .nav-link::after {
                 content: $header-device-nav-item-active-nav-link-after-content;
-                color: $header-device-nav-item-active-nav-link-after-color;
+                font-size: $header-device-nav-item-active-nav-link-after-font-size;
+                color: $primary-white-color;
                 font-weight: $header-device-nav-item-active-nav-link-after-font-weight;
                 font-family: $header-device-nav-item-active-nav-link-after-font-family;
                 line-height: $header-device-nav-item-active-nav-link-after-line-height;
@@ -172,17 +184,32 @@ header {
 
         .card {
             border: none;
-            @include border-radius(0);
+            @include border-radius($slider-card-border-radius);
 
-            h2 {
+            h2, h3 {
                 font-family: $primary-title-font-family;
                 color: $primary-green-color;
                 text-transform: uppercase;
-                padding-bottom: 2rem;
+                padding-bottom: $slider-card-h2-padding-bottom;
+            }
+
+            h4 {
+                font-family: $primary-title-font-family;
+                color: $primary-gray-color;
+                padding-bottom: $slider-card-h4-padding-bottom;
             }
 
             p {
+                line-height: $slider-card-p-line-geight;
                 text-align: justify;
+                font-size: $slider-card-p-font-size;
+                &:last-child {
+                    margin-bottom: $slider-card-p-last-child-margin-bottom;
+                }
+            }
+
+            img {
+                width: $slider-card-img-width;
             }
         }
 
@@ -216,7 +243,7 @@ header {
         #slider {
             .main-container {
                 .card-group {
-                    flex-direction: column;
+                    flex-direction: column-reverse;
                     & > .card {
                         margin-bottom: $slider-card-margin-bottom;
                         iframe {
