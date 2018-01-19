@@ -1,0 +1,96 @@
+$title-color: $primary-green-color;
+$primary-color: $primary-green-color;
+
+.contacts {
+
+    font-size: 0.9rem;
+    font-weight: $font-width-subtitle;
+
+    a {
+        color: $primary-color;
+    }
+
+    span {
+        color: $primary-color;
+        font-weight: bold;
+    }
+
+    h3 {
+        text-transform: uppercase;
+        color: $title-color;
+    }
+
+    h3, p {
+        margin-bottom: 1.5rem;
+    }
+
+    .contacts-map::after {
+        @include dotted-line(2rem, 0);
+    }
+
+    .card-deck {
+        .card {
+            margin-bottom: 2rem;
+            min-width: calc(20% - 30px);
+            max-width: calc(20% - 30px);
+            @include no-border();
+            border-top: none;
+            border-left: none;
+            border-right: none;
+            border-bottom: 1px dotted $primary-green-color;
+
+            .card-body, .card-footer {
+                padding-left: 0;
+                padding-right: 0;
+
+            }
+
+            .card-footer {
+                background-color: transparent;
+                border-top: none;
+                line-height: 1.5rem;
+                span {
+                    color: black;
+                    font-weight: inherit;
+                }
+            }
+
+            img {
+                @include no-border();
+            }
+        }
+    }
+}
+
+@media (max-width: 992px) {
+    .contacts {
+        .card-deck {
+            .card {
+                min-width: calc(33.33% - 30px);
+                max-width: calc(33.33% - 30px);
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .contacts {
+        .card-deck {
+            .card {
+                min-width: calc(50% - 30px);
+                max-width: calc(50% - 30px);
+            }
+        }
+    }
+}
+
+@media (max-width: 576px) {
+    .contacts {
+        .card-deck {
+            .card {
+                min-width: 100%;
+                max-width: 100%;
+            }
+        }
+    }
+}
