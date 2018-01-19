@@ -1,0 +1,163 @@
+$left-side-bar-item-a-color: $primary-gray-color;
+$left-side-bar-item-a-hover-color: $primary-green-color;
+$left-side-bar-item-a-font-width: $font-width-subtitle;
+$left-side-bar-item-a-padding: 0.3rem 0;
+$left-side-bar-item-a-font-size: 0.9rem;
+
+$right-content-h3-color: $primary-green-color;
+$right-content-h3-font-width: $font-width-subtitle;
+$right-content-h3-margin-bottom: 2rem;
+
+$right-content-h4-color: $primary-gray-color;
+$right-content-h4-font-width: $font-width-subtitle;
+$right-content-h4-margin-top: 1.5rem;
+
+$right-content-p-font-width: $font-width-subtitle;
+$right-content-p-margin: 1rem 0;
+$right-content-p-first-child-margin: 0;
+
+$right-content-highlight-color: $primary-green-color;
+
+$apps-content-h6-margin-bottom: 0.5rem;
+$apps-content-h6-font-weight: $font-width-subtitle;
+
+$apps-content-div-margin-bottom: 2rem;
+
+$apps-content-a-transition-duration: 300ms;
+$apps-content-a-padding: 0.5rem;
+$apps-content-a-margin: 0.3rem 0;
+$apps-content-a-background-color: $primary-green-color;
+$apps-content-a-hover-opacity: 0.7;
+$apps-content-a-hover-box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.5);
+
+$accordion-card-header-padding: 0;
+$accordion-card-header-a-margin: 0;
+$accordion-card-header-a-font-size: 1rem;
+$accordion-card-header-a-padding: 0.75rem 1.25rem;
+$accordion-card-body-ul-padding-left: 1rem;
+
+.application {
+
+    .left-side-bar {
+        #left-side-bar-accordion {
+            .item {
+                a {
+                    display: block;
+                    text-decoration: none;
+                    font-size: $left-side-bar-item-a-font-size;
+                    color: $left-side-bar-item-a-color;
+                    font-weight: $left-side-bar-item-a-font-width;
+                    padding: $left-side-bar-item-a-padding;
+
+                    &:hover {
+                        color: $left-side-bar-item-a-hover-color;
+                    }
+
+                    &.active {
+                        color: $left-side-bar-item-a-hover-color;
+                    }
+                }
+
+                ul {
+                    margin-bottom: $margin-0;
+                }
+
+                &::after {
+                    @include dotted-line(0.3rem, 0.5rem);
+
+                }
+            }
+        }
+    }
+
+    .right-content {
+
+        .card-img-top {
+            @include no-border();
+        }
+
+        .header-box {
+            h3 {
+                font-weight: $right-content-h3-font-width;
+                text-transform: uppercase;
+                color: $right-content-h3-color;
+                margin-bottom: $right-content-h3-margin-bottom;
+            }
+
+            h4 {
+                font-weight: $right-content-h4-font-width;
+                color: $right-content-h4-color;
+                margin-top: $right-content-h4-margin-top;
+            }
+
+            p {
+                font-weight: $right-content-p-font-width;
+                margin: $right-content-p-margin;
+
+                &:first-child {
+                    margin: $right-content-p-first-child-margin;
+                }
+            }
+
+            .highlight {
+                color: $right-content-highlight-color;
+            }
+
+            &::after {
+                @include dotted-line(1rem, 0.5rem);
+            }
+        }
+
+        .apps-content {
+
+            & > div {
+                margin-bottom: $apps-content-div-margin-bottom;
+            }
+
+            h6 {
+                margin-bottom: $apps-content-h6-margin-bottom;
+                font-weight: $apps-content-h6-font-weight;
+            }
+
+            a {
+                display: block;
+                color: white;
+                background-color: $apps-content-a-background-color;
+                padding: $apps-content-a-padding;
+                margin: $apps-content-a-margin;
+                @include transition-property(all);
+                @include transition-duration($apps-content-a-transition-duration);
+
+                &:hover {
+                    text-decoration: none;
+                    opacity: $apps-content-a-hover-opacity;
+                    @include box-shadow($apps-content-a-hover-box-shadow);
+                }
+            }
+
+            #accordion {
+                .card {
+                    @include no-border();
+
+                    .card-header {
+                        padding: $accordion-card-header-padding;
+
+                        a {
+                            margin: $accordion-card-header-a-margin;
+                            font-size: $accordion-card-header-a-font-size;
+                            padding: $accordion-card-header-a-padding;
+                        }
+                    }
+
+                    .card-body {
+                        ul {
+                            padding-left: $accordion-card-body-ul-padding-left;
+                        }
+                    }
+                }
+            }
+
+        }
+
+    }
+}
