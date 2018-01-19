@@ -76,12 +76,20 @@ header {
             top: $header-drop-down-show-header-top;
             opacity: $header-drop-down-show-header-opacity;
         }
+
+        img {
+            height: 60px;
+        }
     }
 
     #header, #header-drop-down {
         padding-top: $header-padding-top;
         padding-bottom: $header-padding-bottom;
         @include box-shadow($header-box-shadow);
+
+        .row > img {
+            padding-right: 15px;
+        }
 
         .nav-item {
             margin-right: $header-nav-item-margin-right;

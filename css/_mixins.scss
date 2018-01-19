@@ -30,6 +30,10 @@
     border-radius: $radius;
 }
 
+@mixin no-border(){
+    @include border-radius(0);
+}
+
 @mixin transition-property($property) {
     -webkit-transition-property: $property;
     -moz-transition-property: $property;

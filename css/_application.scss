@@ -14,6 +14,9 @@ $right-content-h4-margin-top: 1.5rem;
 
 $right-content-p-font-width: $font-width-subtitle;
 $right-content-p-margin: 1rem 0;
+$right-content-p-first-child-margin: 0;
+
+$right-content-highlight-color: $primary-green-color;
 
 $apps-content-h6-margin-bottom: 0.5rem;
 $apps-content-h6-font-weight: $font-width-subtitle;
@@ -26,6 +29,12 @@ $apps-content-a-margin: 0.3rem 0;
 $apps-content-a-background-color: $primary-green-color;
 $apps-content-a-hover-opacity: 0.7;
 $apps-content-a-hover-box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.5);
+
+$accordion-card-header-padding: 0;
+$accordion-card-header-a-margin: 0;
+$accordion-card-header-a-font-size: 1rem;
+$accordion-card-header-a-padding: 0.75rem 1.25rem;
+$accordion-card-body-ul-padding-left: 1rem;
 
 .application {
 
@@ -43,6 +52,10 @@ $apps-content-a-hover-box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.5);
                     &:hover {
                         color: $left-side-bar-item-a-hover-color;
                     }
+
+                    &.active {
+                        color: $left-side-bar-item-a-hover-color;
+                    }
                 }
 
                 ul {
@@ -58,6 +71,11 @@ $apps-content-a-hover-box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.5);
     }
 
     .right-content {
+
+        .card-img-top {
+            @include no-border();
+        }
+
         .header-box {
             h3 {
                 font-weight: $right-content-h3-font-width;
@@ -75,6 +93,14 @@ $apps-content-a-hover-box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.5);
             p {
                 font-weight: $right-content-p-font-width;
                 margin: $right-content-p-margin;
+
+                &:first-child {
+                    margin: $right-content-p-first-child-margin;
+                }
+            }
+
+            .highlight {
+                color: $right-content-highlight-color;
             }
 
             &::after {
@@ -106,6 +132,28 @@ $apps-content-a-hover-box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.5);
                     text-decoration: none;
                     opacity: $apps-content-a-hover-opacity;
                     @include box-shadow($apps-content-a-hover-box-shadow);
+                }
+            }
+
+            #accordion {
+                .card {
+                    @include no-border();
+
+                    .card-header {
+                        padding: $accordion-card-header-padding;
+
+                        a {
+                            margin: $accordion-card-header-a-margin;
+                            font-size: $accordion-card-header-a-font-size;
+                            padding: $accordion-card-header-a-padding;
+                        }
+                    }
+
+                    .card-body {
+                        ul {
+                            padding-left: $accordion-card-body-ul-padding-left;
+                        }
+                    }
                 }
             }
 
