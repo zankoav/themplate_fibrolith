@@ -1,0 +1,61 @@
+
+.header-reference {
+    h1 {
+        text-transform: uppercase;
+        color: $primary-green-color;
+        font-family: $primary-title-font-family;
+        font-size: 1.75rem;
+        margin-bottom: 1rem;
+    }
+
+    p {
+        font-size: 0.9rem;
+    }
+
+    .main-container::after {
+        @include dotted-line(0.3rem, 0.5rem);
+    }
+}
+
+.body-reference {
+
+    .reference-item {
+        margin: 2rem 0;
+
+        .ref-header {
+
+            background-color: #f7f7f7;
+
+            a {
+                color: $primary-gray-color;
+                &:hover {
+                    text-decoration: none;
+                }
+                i {
+                    color: $primary-white-color;
+                }
+
+                &[aria-expanded=false] {
+                    .fa-chevron-up:before {
+                        content: "\f078";
+                    }
+                }
+
+                &[aria-expanded=true] {
+                    .fa-chevron-up:before {
+                        content: "\f077";
+                    }
+                }
+            }
+        }
+
+        .card-body {
+            @include no-border();
+        }
+    }
+
+    .main-container::after {
+        @include dotted-line(2rem, 0.3rem);
+    }
+}
+
