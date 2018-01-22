@@ -89,7 +89,7 @@ $accordion-card-body-ul-padding-left: 1rem;
                 @include dotted-line(0.3rem, 0.3rem);
             }
 
-            &.active {
+            &.active a{
                 color: $primary-green-color;
             }
         }
@@ -109,6 +109,10 @@ $accordion-card-body-ul-padding-left: 1rem;
 
         .body-box{
             margin-bottom: 4rem;
+
+            h4{
+                margin-bottom: 2rem;
+            }
         }
 
         .body-box, .header-box {
