@@ -70,6 +70,31 @@ $accordion-card-body-ul-padding-left: 1rem;
         }
     }
 
+    .left-menu {
+        list-style-type: none;
+        padding-left: 0;
+        font-size: 0.9rem;
+        li {
+            a {
+                color: $primary-gray-color;
+                display: block;
+                padding: 0.3rem 0;
+                &:hover {
+                    text-decoration: none;
+                    color: $primary-green-color;
+                }
+            }
+
+            &::after {
+                @include dotted-line(0.3rem, 0.3rem);
+            }
+
+            &.active {
+                color: $primary-green-color;
+            }
+        }
+    }
+
     .right-content {
 
         .card-img-top {
@@ -77,6 +102,16 @@ $accordion-card-body-ul-padding-left: 1rem;
         }
 
         .header-box {
+            &::after {
+                @include dotted-line(1rem, 0.5rem);
+            }
+        }
+
+        .body-box{
+            margin-bottom: 4rem;
+        }
+
+        .body-box, .header-box {
             h3 {
                 font-weight: $right-content-h3-font-width;
                 text-transform: uppercase;
@@ -101,10 +136,6 @@ $accordion-card-body-ul-padding-left: 1rem;
 
             .highlight {
                 color: $right-content-highlight-color;
-            }
-
-            &::after {
-                @include dotted-line(1rem, 0.5rem);
             }
         }
 
